@@ -15,15 +15,15 @@ const [password, setPassword]= useState("")
 const [confirmPassword, setConfirmPassword] = useState("")
 const [handleErrorMessage, setHandleErrorMessage] = useState(errorMessage)
 const [isButtonDisable, setIsButtonDisable] = useState(false)
-//----------------------------------------------------------
+
 const dispatch = useDispatch();
-//----------------------------------------------------------
+
 const handleSignUpData = ()=> {
   dispatch(register({email, password}))
 }
-//----------------------------------------------------------
+
 const {errorMessage, isLoading} = useSelector((state)=> state.user)
-//----------------------------------------------------------
+
 useEffect(() => {
   const handleConfirmPassword = () => {
     if (email.length === 0 || password.length === 0 || password !== confirmPassword) {
@@ -37,11 +37,11 @@ useEffect(() => {
 
   handleConfirmPassword();
 }, [email, password, confirmPassword]);
-//----------------------------------------------------------
+
 if(isLoading){
   return <Loading />
 }
-//----------------------------------------------------------
+
 
   return (  
       <SafeAreaView style={styles.signUpContainer}>
