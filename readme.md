@@ -8,7 +8,7 @@
 
 
 <p align="center">
-  <img width="300" height="300" src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/0d10a308-a2d2-4b37-a898-6b058afa2205">
+  <img width="300" height="300" src="https://github.com/kamildegerliyurt/MyWalletApp/assets/139812195/ab6ea9d1-f637-40a0-a16e-dd1e1551759a">
 </p>
 
 
