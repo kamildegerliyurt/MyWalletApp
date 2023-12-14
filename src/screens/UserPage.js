@@ -4,15 +4,15 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const UserPage = ({navigation}) => {
 
-//---------------------------------
+
 const handleSignUp = ()=> {
   navigation.navigate("SignUp")
 }
-//---------------------------------
+
 const handleLogin = ()=> {
   navigation.navigate("LoginScreen")
 }
-//---------------------------------
+
 
   return (
     <SafeAreaView style={styles.userContainer}>
