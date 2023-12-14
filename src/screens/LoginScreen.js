@@ -13,10 +13,10 @@ const LoginScreen = ({navigation}) => {
 const [loginEmail, setLoginEmail]= useState("")
 const [loginPassword, setLoginPassword]= useState("")
 const [handleErrorMessage, setHandleErrorMessage]= useState("")
-//-----------------------------------------------------------------
+
 const dispatch = useDispatch();
 const {errorMessage} = useSelector((state)=> state.user)
-//-----------------------------------------------------------------
+
 useEffect(() => {
 
   const trueEmail = 'Firebase: Error (auth/invalid-email)'
@@ -27,15 +27,15 @@ useEffect(() => {
   setHandleErrorMessage(errorMessage)
 
 }, [errorMessage])
-//-----------------------------------------------------------------
+
 const handleOnPress = ()=> {
   dispatch(login({email, password}))
 }
-//-----------------------------------------------------------------
+
 useEffect(() => {
   dispatch(autoLogin())
 }, [])
-//-----------------------------------------------------------------
+
 
 
 
