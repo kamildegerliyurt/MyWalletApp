@@ -4,11 +4,11 @@ import React from 'react'
 const WelcomePage = ({navigation}) => {
 
 
-//--------------------------------------
+
 const handleGoToUserPage = () => {
   navigation.navigate("UserPage") 
 }
-//--------------------------------------
+
 
 
   return (
