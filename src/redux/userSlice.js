@@ -17,26 +17,26 @@ export const login = createAsyncThunk('user/login', async({email, password})=>{
         const auth = getAuth();
         const userCredential = await signInWithEmailAndPassword(auth, email, password)
         
-        // Kullanıcı verilerini al
+      
         const user = userCredential.user;
 
-        // Alınan kullanıcı verileri içerisinden Token seç
+       
         const token = user.stsTokenManager.accessToken;
 
-        // Çektiğimiz verileri fonksiyon çıktısı olarak hazırla
+       
         const userData ={
             token,
             user:user,
         }
 
-        // Eğer kullanıcı başarıyla login yaptıysa gelen onay Token cihazın local hafızasına kaydet
+     
 
         await AsyncStorage.setItem('userToken', token)
 
         return userData
 
     } catch (error) {
-        // Hata ile karşılaşılması durumunda çıktı al
+       
         throw error
     }
 })
@@ -63,10 +63,10 @@ export const logout = createAsyncThunk('user/logout', async()=>{
     try {
         const auth = getAuth();
 
-        // Firebase den çıkış işlemini başlat
+      
         await signOut(auth);
 
-        // Telefonun ön belleğinde tutulan 'token' verisini sil
+       
         await AsyncStorage.removeItem('userToken')
 
         return null;
@@ -82,18 +82,18 @@ export const register = createAsyncThunk('user/register', async({email, password
 
         const auth = getAuth();
 
-        // Firebase de yeni bir kullanıcı oluştur
+     
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
 
-        // Eğer başarıyla kullanıcı oluşturulduysa token ve kullanıcı bilgileri al
+ 
         const user = userCredential.user;
         const token = user.stsTokenManager.accessToken;
 
-        // Email onayı gönder
+      
         await sendEmailVerification(user);
 
-        // Kayıt sonrası kullanıcı başarıyla uygulamaya giriş yapacağı için alınan token telefonun önbelleğine kaydedilir
+        
         await AsyncStorage.setItem("userToken", token)
 
         return token;
