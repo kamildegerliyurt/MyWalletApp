@@ -8,8 +8,7 @@ const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
   return (
-    <Stack.Navigator initialRouteName='ProductList' 
-                     screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
 
       <Stack.Screen name='WelcomePage' component={WelcomePage}/>
       <Stack.Screen name='UserPage' component={UserPage}/>
